@@ -23,6 +23,7 @@ export default function Footer() {
             <li><Link to="/gallery" className="hover:text-ink">Gallery</Link></li>
             <li><Link to="/diet-plans" className="hover:text-ink">Diet Plans</Link></li>
             <li><Link to="/exercise-guide" className="hover:text-ink">Exercise Guide</Link></li>
+            <li className="pt-2"><Link to="/admin/login" className="inline-flex items-center rounded-full border border-white/10 px-3 py-2 text-sm text-muted transition hover:border-violet/40 hover:text-ink">Admin Login</Link></li>
           </ul>
         </div>
 

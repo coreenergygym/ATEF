@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { NavLink } from 'react-router-dom'
-import { Menu, X } from 'lucide-react'
+import { Menu, X, LockKeyhole } from 'lucide-react'
 import { useGymSettings } from '../../hooks/useGymSettings.jsx'
 
 const LINKS = [
@@ -45,12 +45,20 @@ export default function Navbar() {
           ))}
         </nav>
 
-        <NavLink
-          to="/contact"
-          className="hidden rounded-full bg-violet px-5 py-2.5 text-sm font-medium text-white shadow-glow transition hover:bg-violet-soft lg:inline-block"
-        >
-          Join Now
-        </NavLink>
+        <div className="hidden items-center gap-3 lg:flex">
+          <NavLink
+            to="/admin/login"
+            className="inline-flex items-center gap-2 rounded-full border border-white/10 px-4 py-2.5 text-sm font-medium text-muted transition hover:border-violet/40 hover:text-ink"
+          >
+            <LockKeyhole size={15} /> Admin Login
+          </NavLink>
+          <NavLink
+            to="/contact"
+            className="rounded-full bg-violet px-5 py-2.5 text-sm font-medium text-white shadow-glow transition hover:bg-violet-soft"
+          >
+            Join Now
+          </NavLink>
+        </div>
 
         <button
           className="text-ink lg:hidden"
@@ -82,13 +90,22 @@ export default function Navbar() {
               </li>
             ))}
           </ul>
-          <NavLink
-            to="/contact"
-            onClick={() => setOpen(false)}
-            className="mt-4 block rounded-full bg-violet px-5 py-3 text-center text-sm font-medium text-white"
-          >
-            Join Now
-          </NavLink>
+          <div className="mt-4 grid grid-cols-2 gap-2">
+            <NavLink
+              to="/admin/login"
+              onClick={() => setOpen(false)}
+              className="inline-flex items-center justify-center gap-2 rounded-full border border-white/10 px-4 py-3 text-sm font-medium text-muted transition hover:border-violet/40 hover:text-ink"
+            >
+              <LockKeyhole size={15} /> Admin Login
+            </NavLink>
+            <NavLink
+              to="/contact"
+              onClick={() => setOpen(false)}
+              className="rounded-full bg-violet px-4 py-3 text-center text-sm font-medium text-white"
+            >
+              Join Now
+            </NavLink>
+          </div>
         </nav>
       )}
     </header>
